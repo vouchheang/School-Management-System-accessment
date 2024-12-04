@@ -1,8 +1,7 @@
 import express from "express";
 import cors from "cors";
 import connectDB from "./config/db.js";
-import authRoute from "./routes/authRoute.js";
-import playerRoute from "./routes/footballerRoute.js";
+import classRoute from "./routes/classRoute.js";
 import dotenv from "dotenv";
 
 // Initialize dotenv to load environment variables
@@ -27,10 +26,8 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to Football CMS application." });
 });
 
-// routes
-app.use("/api/auth", authRoute);
 
-app.use("/api/player", playerRoute);
+app.use("/api/class", classRoute);
 
 //connectDB
 connectDB();
